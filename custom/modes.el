@@ -28,3 +28,13 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+(add-hook 'java-mode-hook 'projectile-on)
+(add-hook 'clojure-mode-hook 'projectile-on)
+
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)

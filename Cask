@@ -11,6 +11,7 @@
 (depends-on "emacs-eclim")
 (depends-on "epl")
 (depends-on "f")
+(depends-on "flx-ido")
 (depends-on "js2-mode")
 (depends-on "pallet")
 (depends-on "popup")
