@@ -38,3 +38,15 @@
 (ido-everywhere 1)
 (flx-ido-mode 1)
 (setq ido-use-faces nil)
+
+(require 'flyspell)
+(setq flyspell-issue-message-flag nil)
+(add-hook 'web-mode-hook
+          (lambda () (flyspell-prog-mode)))
+(add-hook 'java-mode-hook
+          (lambda () (flyspell-prog-mode)))
+(ac-flyspell-workaround)
+
+(custom-set-faces
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
