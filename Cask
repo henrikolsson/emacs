@@ -13,6 +13,7 @@
 (depends-on "f")
 (depends-on "flx-ido")
 (depends-on "js2-mode")
+(depends-on "magit")
 (depends-on "pallet")
 (depends-on "popup")
 (depends-on "projectile")
