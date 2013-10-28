@@ -16,4 +16,6 @@
 (depends-on "s")
 (depends-on "simple-httpd")
 (depends-on "skewer-mode")
+(depends-on "web-mode")
+(depends-on "yaml-mode")
 (depends-on "zenburn-theme")
