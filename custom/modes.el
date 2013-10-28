@@ -25,3 +25,6 @@
 (require 'ac-emacs-eclim-source)
 (ac-emacs-eclim-config)
 
+
+(require 'yasnippet)
+(yas-global-mode 1)

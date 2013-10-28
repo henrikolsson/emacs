@@ -1,0 +1,3 @@
+[submodule "snippets/java-mode"]
+	path = snippets/java-mode
+	url = git@github.com:henrikolsson/yasnippet-java-mode.git

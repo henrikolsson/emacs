@@ -20,4 +20,5 @@
 (depends-on "skewer-mode")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
+(depends-on "yasnippet")
 (depends-on "zenburn-theme")
