@@ -9,6 +9,8 @@
 (load "utils.el")
 (load "indention.el")
 (load "keybindings.el")
+(load "completion.el")
 (load "misc.el")
+(load "modes.el")
 
 (server-start)
