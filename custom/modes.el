@@ -15,3 +15,13 @@
 
 (require 'eclim)
 (global-eclim-mode)
+(custom-set-variables
+ '(eclim-eclipse-dirs '("~/opt/eclipse")))
+(setq eclim-executable "/home/henrik/opt/eclipse/eclim")
+(setq help-at-pt-display-when-idle t)
+(setq help-at-pt-timer-delay 0.1)
+(help-at-pt-set-timer)
+;; add the emacs-eclim source
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
+

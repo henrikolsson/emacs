@@ -13,6 +13,7 @@
 (depends-on "js2-mode")
 (depends-on "pallet")
 (depends-on "popup")
+(depends-on "projectile")
 (depends-on "rainbow-delimiters")
 (depends-on "s")
 (depends-on "simple-httpd")
