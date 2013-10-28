@@ -6,6 +6,7 @@
 (depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "clojure-mode")
+(depends-on "clojure-snippets")
 (depends-on "dash")
 (depends-on "emacs-eclim")
 (depends-on "epl")
