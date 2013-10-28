@@ -7,6 +7,7 @@
 (depends-on "cask")
 (depends-on "clojure-mode")
 (depends-on "dash")
+(depends-on "emacs-eclim")
 (depends-on "epl")
 (depends-on "f")
 (depends-on "js2-mode")
