@@ -29,6 +29,10 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+(define-key yas-minor-mode-map [(tab)] nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map "\C-o" 'yas-expand)
+
 
 (add-hook 'java-mode-hook 'projectile-on)
 (add-hook 'clojure-mode-hook 'projectile-on)
@@ -46,6 +50,7 @@
 (add-hook 'java-mode-hook
           (lambda () (flyspell-prog-mode)))
 (ac-flyspell-workaround)
+(define-key flyspell-mode-map (kbd "M-TAB") nil)
 
 (custom-set-faces
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))

@@ -24,7 +24,4 @@
 
 (global-set-key (kbd "C-c k") 'browse-kill-ring)
 
-(define-key yas-minor-mode-map [(tab)] nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(define-key yas-minor-mode-map "\C-o" 'yas-expand)
 
