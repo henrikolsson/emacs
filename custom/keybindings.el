@@ -25,3 +25,4 @@
 (global-set-key (kbd "C-c k") 'browse-kill-ring)
 
 
+(global-set-key "\C-cv" 'magit-status)
