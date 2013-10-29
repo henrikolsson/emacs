@@ -32,7 +32,7 @@
 (define-key yas-minor-mode-map [(tab)] nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map "\C-o" 'yas-expand)
-
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
 (add-hook 'java-mode-hook 'projectile-on)
 (add-hook 'clojure-mode-hook 'projectile-on)
@@ -55,3 +55,4 @@
 (custom-set-faces
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
