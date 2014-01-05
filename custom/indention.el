@@ -12,3 +12,5 @@
 
 ;; ruby needs only 2 spaces..
 (setq ruby-indent-level 2)
+
+(setq-default c-basic-offset 4)

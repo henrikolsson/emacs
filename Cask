@@ -3,6 +3,7 @@
 (depends-on "ac-js2")
 (depends-on "ac-nrepl")
 (depends-on "auto-complete")
+(depends-on "auto-complete-clang")
 (depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "clojure-mode")

@@ -126,3 +126,8 @@
 ;; consider CamelCased words as having sub-words
 (add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'java-mode-hook 'subword-mode)
+
+(require 'rust-mode)
+
+(autoload 'glsl-mode "glsl-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
