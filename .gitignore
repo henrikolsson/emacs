@@ -4,3 +4,7 @@ backups
 org-clock-save.el
 auto-save-list
 /projectile-bookmarks.eld
+/project-explorer-cache/
+/projectile.cache
+/tramp
+/url/
