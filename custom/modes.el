@@ -34,8 +34,15 @@
 (define-key yas-minor-mode-map "\C-o" 'yas-expand)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
-(add-hook 'java-mode-hook 'projectile-on)
-(add-hook 'clojure-mode-hook 'projectile-on)
+(setq projectile-indexing-method 'git)
+(setq projectile-enable-caching t)
+(projectile-global-mode t)
+(let ((ack_path "~/bin/ack"))
+  (if (file-exists-p ack_path)
+      (progn
+        (setq ack-and-a-half-executable ack_path)
+        (setq ack-and-a-half-arguments '("--ignore-dir=target")))))
+(projectile-global-mode)
 
 (require 'flx-ido)
 (ido-mode 1)
@@ -56,3 +63,5 @@
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
+(require 'undo-tree)
+(global-undo-tree-mode)

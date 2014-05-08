@@ -131,3 +131,16 @@
 
 (autoload 'glsl-mode "glsl-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
+
+(blink-cursor-mode -1)
+
+(require 'project-explorer)
+(setq pe/omit-regex "^\\.\\|^#\\|~$\\|^target$")
+
+(put 'downcase-region 'disabled nil)
+
+(setq ergoemacs-theme "lvl2")
+(ergoemacs-mode 1)
+
+; i like my control..
+(global-set-key (kbd "C-SPC") 'set-mark-command)
