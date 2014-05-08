@@ -53,7 +53,7 @@
 
 ;; uniquify buffer names
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward)
+(setq uniquify-buffer-name-style 'forward)
 (setq uniquify-after-kill-buffer-p t)
 
 ;; default to print a4 papers
