@@ -32,7 +32,6 @@
 (define-key yas-minor-mode-map [(tab)] nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map "\C-o" 'yas-expand)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
 (setq projectile-indexing-method 'git)
 (setq projectile-enable-caching t)

@@ -1,4 +1,4 @@
-(source melpa)
+(source "melpa" "http://melpa.milkbox.net/packages/")
 
 (depends-on "ac-js2")
 (depends-on "ac-nrepl")
@@ -16,6 +16,7 @@
 (depends-on "ergoemacs-mode")
 (depends-on "f")
 (depends-on "flx-ido")
+(depends-on "java-snippets")
 (depends-on "js2-mode")
 (depends-on "magit")
 (depends-on "pallet")
