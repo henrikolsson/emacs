@@ -138,9 +138,3 @@
 (setq pe/omit-regex "^\\.\\|^#\\|~$\\|^target$")
 
 (put 'downcase-region 'disabled nil)
-
-(setq ergoemacs-theme "lvl2")
-(ergoemacs-mode 1)
-
-; i like my control..
-(global-set-key (kbd "C-SPC") 'set-mark-command)
