@@ -14,3 +14,8 @@
 (setq ruby-indent-level 2)
 
 (setq-default c-basic-offset 4)
+
+; two spaces for javascript
+(setq js-indent-level 4)
+(add-hook 'js2-mode-hook (lambda() (setq js2-basic-offset 4)))
+
