@@ -138,3 +138,36 @@
 (setq pe/omit-regex "^\\.\\|^#\\|~$\\|^target$")
 
 (put 'downcase-region 'disabled nil)
+
+;; don't confuse file watchers
+(setq create-lockfiles nil)
+
+(require 'cedet)
+(require 'semantic)
+(load "semantic/loaddefs.el")
+(semantic-mode 1)
+(require 'malabar-mode)
+(add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
+(require 'gud)
+
+;(defadvice gud-find-class (around my-gud-find-class activate)
+;  (let ((gud-jdb-sourcepath
+;         (list (replace-regexp-in-string "/java/.*" "/java" f))))
+;    ad-do-it))
+
+;(debug-on-entry 'gud-jdb-find-source)
+ 
+(setq ac-delay 1.0)
+
+(unless (boundp 'compilation-error-regexp-alist-alist)
+  (require 'compile))
+
+(when (not (assoc 'maven3 compilation-error-regexp-alist-alist))
+  (add-to-list 'compilation-error-regexp-alist-alist
+               '(maven3 "^\\[ERROR\\] +\\(.+?\\):\\[\\([0-9]+\\),\\([0-9]+\\)\\].*"
+                        1 2 2)
+               (add-to-list 'compilation-error-regexp-alist 'maven3)))
+
+(global-set-key [C-tab] 'completion-at-point)
+(setq ido-auto-merge-work-directories-length -1)
+

@@ -8,3 +8,8 @@ auto-save-list
 /projectile.cache
 /tramp
 /url/
+/eshell
+/semanticdb
+/session.*
+/srecode-map.el
+
