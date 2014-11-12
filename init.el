@@ -17,3 +17,5 @@
 (load "modes.el")
 
 (server-start)
+
+(setq c-debug-parse-state t)

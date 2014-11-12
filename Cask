@@ -15,6 +15,7 @@
 (depends-on "epl")
 (depends-on "f")
 (depends-on "flx-ido")
+(depends-on "go-mode")
 (depends-on "java-snippets")
 (depends-on "magit")
 (depends-on "malabar-mode")
