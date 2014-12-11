@@ -20,3 +20,7 @@
 (add-hook 'c++-mode-hook 
           (lambda () (define-key c++-mode-map (kbd "C-<tab>") 'ac-complete-clang)))
 (require 'auto-complete-clang)
+
+(add-hook 'slime-mode-hook
+          (lambda () (define-key slime-mode-map (kbd "C-<tab>") 'ac-complete-slime)))
+(require 'ac-slime)

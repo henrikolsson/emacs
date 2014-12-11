@@ -26,12 +26,12 @@
 (ac-emacs-eclim-config)
 
 
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
-(define-key yas-minor-mode-map [(tab)] nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(define-key yas-minor-mode-map "\C-o" 'yas-expand)
+;(define-key yas-minor-mode-map [(tab)] nil)
+;(define-key yas-minor-mode-map (kbd "TAB") nil)
+;(define-key yas-minor-mode-map "\C-o" 'yas-expand)
 
 (setq projectile-indexing-method 'git)
 (setq projectile-enable-caching t)

@@ -126,6 +126,8 @@
 ;; consider CamelCased words as having sub-words
 (add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'java-mode-hook 'subword-mode)
+(require 'ws-butler)
+(add-hook 'java-mode-hook 'ws-butler-mode)
 
 (require 'rust-mode)
 
@@ -147,6 +149,11 @@
 (load "semantic/loaddefs.el")
 (semantic-mode 1)
 (require 'malabar-mode)
+; flycheck broken in current malabar
+; (defun setup-java-buffer ()
+; (require 'malabar-flycheck)
+;  (malabar-mode))
+;  (flycheck-mode))
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 (require 'gud)
 
@@ -170,4 +177,13 @@
 
 (global-set-key [C-tab] 'completion-at-point)
 (setq ido-auto-merge-work-directories-length -1)
+
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c M-x") 'execute-extended-command)
+(require 'flycheck)
+(add-hook 'js-mode-hook
+          (lambda () (flycheck-mode t)))
 
