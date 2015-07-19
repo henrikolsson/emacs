@@ -63,7 +63,7 @@
 ;; log time when completing org tasks
 (setq org-log-done 'time)
 ;; enable remember for org
-(org-remember-insinuate)
+;(org-remember-insinuate)
 ;; enables clock persistance
 (org-clock-persistence-insinuate)
 ;; load org files from dropbox dir
@@ -144,18 +144,23 @@
 ;; don't confuse file watchers
 (setq create-lockfiles nil)
 
-(require 'cedet)
-(require 'semantic)
-(load "semantic/loaddefs.el")
-(semantic-mode 1)
-(require 'malabar-mode)
+;(add-to-list 'load-path "~/src/cedet/lisp/cedet/")
+;(require 'cedet)
+;(require 'semantic)
+;(load "semantic/loaddefs.el")
+;(semantic-mode 1)
+;; (add-to-list 'load-path "/home/henrik/src/malabar-mode-20140303.946/src/main/lisp")
+;; (require 'malabar-mode)
+;; (setq malabar-groovy-grooyshdebug t)
+
+;(require 'malabar-mode)
 ; flycheck broken in current malabar
 ; (defun setup-java-buffer ()
 ; (require 'malabar-flycheck)
 ;  (malabar-mode))
 ;  (flycheck-mode))
-(add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
-(require 'gud)
+;; (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
+;; (require 'gud)
 
 ;(defadvice gud-find-class (around my-gud-find-class activate)
 ;  (let ((gud-jdb-sourcepath
@@ -164,8 +169,6 @@
 
 ;(debug-on-entry 'gud-jdb-find-source)
  
-(setq ac-delay 1.0)
-
 (unless (boundp 'compilation-error-regexp-alist-alist)
   (require 'compile))
 
@@ -183,7 +186,23 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c M-x") 'execute-extended-command)
-(require 'flycheck)
+;(require 'flycheck)
 (add-hook 'js-mode-hook
           (lambda () (flycheck-mode t)))
 
+
+(load-file "~/src/cedet/cedet-devel-load.el")
+(add-hook 'after-init-hook (lambda ()
+                             (message "activate-malabar-mode")
+                             (activate-malabar-mode)))
+
+(add-hook 'malabar-java-mode-hook 'flycheck-mode)
+(add-hook 'malabar-groovy-mode-hook 'flycheck-mode)
+
+
+(add-hook 'malabar-mode-hook
+          (lambda () 
+            (add-hook 'after-save-hook 'malabar-http-compile-file-silently
+                      nil t)))
+
+(setq c-debug-parse-state t)

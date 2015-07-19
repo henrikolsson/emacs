@@ -1,5 +1,3 @@
-;(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -8,22 +6,20 @@
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tag\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-(require 'eclim)
-(global-eclim-mode)
-(custom-set-variables
- '(eclim-eclipse-dirs '("~/opt/eclipse")))
-(setq eclim-executable "/home/henrik/opt/eclipse/eclim")
-(setq help-at-pt-display-when-idle t)
-(setq help-at-pt-timer-delay 0.1)
-(help-at-pt-set-timer)
-;; add the emacs-eclim source
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
+;; ;(require 'eclim)
+;; (global-eclim-mode)
+;; (custom-set-variables
+;;  '(eclim-eclipse-dirs '("~/opt/eclipse")))
+;; (setq eclim-executable "/home/henrik/opt/eclipse/eclim")
+;; (setq help-at-pt-display-when-idle t)
+;; (setq help-at-pt-timer-delay 0.1)
+;; (help-at-pt-set-timer)
 
 
 ;(require 'yasnippet)
@@ -55,7 +51,6 @@
           (lambda () (flyspell-prog-mode)))
 (add-hook 'java-mode-hook
           (lambda () (flyspell-prog-mode)))
-(ac-flyspell-workaround)
 (define-key flyspell-mode-map (kbd "M-TAB") nil)
 
 (custom-set-faces
@@ -64,3 +59,14 @@
 
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+(add-to-list 'load-path "~/src/tern/emacs")
+(autoload 'tern-mode "tern.el" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-to-list 'company-backends 'company-tern)
+
+;;(autoload 'js2-mode "js2-mode" nil t)
+;;(add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+

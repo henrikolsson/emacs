@@ -19,7 +19,7 @@
 (depends-on "java-snippets")
 (depends-on "magit")
 (depends-on "malabar-mode")
-(depends-on "flycheck")
+;(depends-on "flycheck")
 (depends-on "java-snippets")
 (depends-on "magit")
 (depends-on "malabar-mode")
